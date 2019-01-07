@@ -1,4 +1,4 @@
-# pronto
+# pronto live timing
 
 ## Project setup
 ```
