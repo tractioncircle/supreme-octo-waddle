@@ -1,11 +1,12 @@
 <template>
-	<v-content>
+	<div>
 		<run-ticker />
     	<class-list />
-	</v-content>
+	</div>
 </template>
 
 <script>
+import EventHeader from '@/components/EventHeader'
 import RunTicker from './RunTicker'
 import ClassList from './ClassList'
 
