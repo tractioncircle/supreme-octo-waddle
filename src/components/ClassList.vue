@@ -27,70 +27,16 @@
 </template>
 
 <script>
+	import axios from 'axios'
+
 	export default {
 		data () {
 			return { 
-				classes: [
-					{
-						name: "AS",
-						url: '/results/AS',
-						active: true,
-					},
-					{
-						name: "ASL",
-						active: false
-					},
-					{
-						name: "ASP",
-						url: "/results/ASP",
-						active: true,
-					},
-					{
-						name: "ASPL",
-						url: "/results/ASPL",
-						active: true,
-					},
-					{
-						name: "BS",
-						url: "/results/BS",
-						active: true,
-					},
-					{
-						name: "BSL",
-						url: "/results/BSL",
-						active: true,
-					},
-					{
-						name: "BSP",
-						url: "/results/BSP",
-						active: true,
-					},
-					{
-						name: "BSPL",
-						url: "/results/BSPL",
-						active: true,
-					},
-					{
-						name: "BP",
-					},
-					{
-						name: "BPL",
-					},
-					{
-						name: "CS",
-					},
-					{
-						name: "CSL",
-					},
-					{
-						name: "CSP",
-					},
-					{
-						name: "CSPL",
-					},
-
-				]
+				classes: []
 			}
+		},
+		created() {
+			axios.get("./data/classlist.json").then(response => { console.log(response); this.classes = response.data});
 		}
 	}
 </script>
